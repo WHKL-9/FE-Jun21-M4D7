@@ -5,3 +5,5 @@ const MyBadge = (props) => (
 )
 
 export default MyBadge
+
+// no conversion needed

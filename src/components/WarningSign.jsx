@@ -5,3 +5,5 @@ const WarningSign = (props) => (
 )
 
 export default WarningSign
+
+//no conversion needed
