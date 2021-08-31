@@ -17,8 +17,8 @@ const AddComment = ({ asin }) => {
 
   useEffect(() => {
     setComment({
-        ...comment,
-        elementId: asin? asin.selectedBook:null,
+      ...comment,
+      elementId: asin ? asin.selectedBook : null,
     });
   }, [asin]);
 
@@ -37,7 +37,7 @@ const AddComment = ({ asin }) => {
     e.preventDefault();
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments" ,
+        "https://striveschool-api.herokuapp.com/api/comments",
         {
           method: "POST",
           body: JSON.stringify(comment),
@@ -51,8 +51,7 @@ const AddComment = ({ asin }) => {
       if (response.ok) {
         // the comment has been sent succesfully!!
         alert("Comment was sent!");
-        
-
+        setComment({ comment: "", rate: 1, elementId: null });
       } else {
         console.log("error");
         alert("something went wrong");
@@ -61,7 +60,7 @@ const AddComment = ({ asin }) => {
       console.log("error");
     }
   };
-  console.log({comment})
+  console.log({ comment });
 
   return (
     <div>
@@ -74,8 +73,8 @@ const AddComment = ({ asin }) => {
             value={comment.comment}
             onChange={(e) =>
               setComment({
-                  ...comment,
-                  comment: e.target.value,
+                ...comment,
+                comment: e.target.value,
               })
             }
           />
@@ -89,7 +88,7 @@ const AddComment = ({ asin }) => {
               setComment({
                 ...comment,
                 rate: e.target.value,
-            })
+              })
             }
           >
             <option>1</option>
