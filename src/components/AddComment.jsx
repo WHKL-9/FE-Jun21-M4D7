@@ -17,7 +17,6 @@ const AddComment = ({ asin }) => {
 
   useEffect(() => {
     setComment({
-     
         ...comment,
         elementId: asin? asin.selectedBook:null,
      
